@@ -11,10 +11,10 @@ public class ReadingFile {
         List<String> file = Files.readAllLines(Path.of(path));
         for (String str : file) {
             String[] strSplit = str.split(",");
-            if (file.get(0).equals(str)) {
+            if (file.get(0).equals(str)) { //todo
                 continue;
             }
-            System.out.println(str);
+            System.out.println(str); // todo вывод элементов строки (не зря же сплитили)
         }
     }
 }

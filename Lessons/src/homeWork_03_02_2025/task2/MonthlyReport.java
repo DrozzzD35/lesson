@@ -62,20 +62,37 @@ public class MonthlyReport {
         return sumItem;
     }
 
+//    public double getTotalExpense() {
+//        double unitPrice = 0;
+//        int quantity = 0;
+//        for (MonthlyReportItem str : monthlyReports) {
+//            if (!str.getExpense()) {
+//                unitPrice += str.getUnitPrice();
+//                quantity += str.getQuantity();
+//                sumExpense += unitPrice * quantity;
+//                quantity *= 0;
+//                unitPrice *= 0;
+//            }
+//        }
+//        return sumExpense;
+//    }
     public double getTotalExpense() {
-        double unitPrice = 0;
-        int quantity = 0;
-        for (MonthlyReportItem str : monthlyReports) {
-            if (!str.getExpense()) {
-                unitPrice += str.getUnitPrice();
-                quantity += str.getQuantity();
-                sumExpense += unitPrice * quantity;
-                quantity *= 0;
-                unitPrice *= 0;
+        double totalSum = 0;
+        for (MonthlyReportItem item : monthlyReports) {
+            if (item.getExpense()) {
+                totalSum += item.getQuantity() * item.getUnitPrice();
             }
         }
-        return sumExpense;
+        return totalSum;
     }
+
+    /*
+    1) нужна переменная которая хранит сумму
+    2) нужен цикл для перебора элементов массива
+    3) нам нужны только траты
+    4) сложить все траты в переменную
+    5) вернуть переменную
+     */
 }
 
 
