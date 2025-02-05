@@ -6,5 +6,7 @@ import homeWork_03_02_2025.task4.YearlyReport;
 import java.util.Map;
 
 public class VerifyReports {
-    void verifyReports(YearlyReport yearlyReport, Map<Integer, MonthlyReport> monthlyReports){}
+    void verifyReports(YearlyReport yearlyReport, Map<Integer, MonthlyReport> monthlyReports){
+        System.out.println("что-то изменил");
+    }
 }
