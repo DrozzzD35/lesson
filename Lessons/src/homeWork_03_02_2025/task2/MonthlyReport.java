@@ -12,9 +12,9 @@ public class MonthlyReport {
     private double sumExpense = 0;
 
     public void MonthlyReportList(){
-        monthlyReportList = ReadingFileTask2.ReadFile("m.202101.csv");
+        monthlyReportList = ReadingFileTask2.ReadFile();
         for (String str : monthlyReportList) {
-            if (monthlyReportList.get(0).equals(str)) {
+            if (str.equals("item_name,is_expense,quantity,sum_of_one")) {
                 continue;
             }
             String[] strSplit = str.split(",");

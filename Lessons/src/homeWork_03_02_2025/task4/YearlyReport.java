@@ -11,9 +11,9 @@ public class YearlyReport {
     List<YearlyReportItem> yearlyReportList = new ArrayList<>();
 
     public void yearlyReportList() throws IOException {
-        yearReport = ReadingFileTask4.ReadFile("y.2021.csv");
+        yearReport = ReadingFileTask4.ReadFile();
         for (String str : yearReport) {
-            if (yearReport.get(0).equals(str)) {
+            if (str.equals("month,amount,is_expense")) {
                 continue;
             } else {
                 String[] strSplit = str.split(",");

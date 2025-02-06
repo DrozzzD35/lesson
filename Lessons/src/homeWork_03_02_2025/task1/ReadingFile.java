@@ -7,14 +7,17 @@ import java.util.List;
 
 public class ReadingFile {
     public static void main(String[] args) throws IOException {
-        String path = "C:\\Program Files\\Java\\Lessons\\Lessons\\src\\homeWork_03_02_2025\\m.202101.csv";
+        String path = "src/homeWork_03_02_2025/resources/m.202101.csv";
         List<String> file = Files.readAllLines(Path.of(path));
         for (String str : file) {
-            String[] strSplit = str.split(",");
-            if (file.get(0).equals(str)) { //todo
+            if (str.equals("item_name,is_expense,quantity,sum_of_one")) {
                 continue;
             }
-            System.out.println(str); // todo вывод элементов строки (не зря же сплитили)
+            String[] strSplit = str.split(",");
+
+            for (String s : strSplit) {
+                System.out.print(s + " ");
+            }
         }
     }
 }
