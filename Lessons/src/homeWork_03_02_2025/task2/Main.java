@@ -8,10 +8,5 @@ public class Main {
         monthlyReport.MonthlyReportList();
         monthlyReport.printReportList();
 
-
-        double sumExpense = monthlyReport.getTotalExpense();
-        double sumIncome = monthlyReport.getTotalIncome();
-        System.out.println("Сумма всех расходов: "+sumExpense);
-        System.out.println("Сумма доходов: "+sumIncome);
     }
 }

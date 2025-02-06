@@ -1,7 +1,6 @@
 package homeWork_25_01_25.task2;
 
 public class Main {
-    // TODo ошибка тестирования
     public static void main(String[] args) {
         Car bmw = new Car();
         bmw.setBrand("БМВ");

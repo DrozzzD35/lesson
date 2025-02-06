@@ -1,18 +1,15 @@
-package homeWork_03_02_2025.task2;
+package homeWork_03_02_2025.task3;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonthlyReport {
     List<String> monthlyReportList;
     List<MonthlyReportItem> monthlyReports = new ArrayList<>();
-    private double sumItem = 0;
-    private double sumExpense = 0;
 
-    public void MonthlyReportList(){
-        monthlyReportList = ReadingFileTask2.ReadFile();
+    public void MonthlyReportList() {
+        monthlyReportList = ReadingFileTask3.ReadFile();
         for (String str : monthlyReportList) {
             if (str.equals("item_name,is_expense,quantity,sum_of_one")) {
                 continue;
@@ -47,7 +44,33 @@ public class MonthlyReport {
 
     }
 
+    public double getTotalIncome() {
+        double totalSum = 0;
+        for (MonthlyReportItem item : monthlyReports) {
+            if (!item.getExpense()) {
+                totalSum += item.getQuantity() * item.getUnitPrice();
+            }
+        }
+        return totalSum;
+    }
 
+    public double getTotalExpense() {
+        double totalSum = 0;
+        for (MonthlyReportItem item : monthlyReports) {
+            if (item.getExpense()) {
+                totalSum += item.getQuantity() * item.getUnitPrice();
+            }
+        }
+        return totalSum;
+    }
+
+    /*
+    1) нужна переменная которая хранит сумму
+    2) нужен цикл для перебора элементов массива
+    3) нам нужны только траты
+    4) сложить все траты в переменную
+    5) вернуть переменную
+     */
 }
 
 
