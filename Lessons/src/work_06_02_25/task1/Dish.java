@@ -1,9 +1,9 @@
 package work_06_02_25.task1;
 
-public class Dish extends MenuItem{
+public class Dish extends MenuItem {
 
-    public Dish(String name, double price, Status status) {
-        super(name, price, status);
+    public Dish(String name, double price) {
+        super(name, price);
     }
 
     @Override

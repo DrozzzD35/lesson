@@ -8,6 +8,8 @@ public class MonthlyReport {
     private int month;
     private int year;
     private List<MonthlyReportItem> items = new ArrayList<>();
+    List<String> fileName = new ArrayList<>();
+
 
     public void monthlyReportList(String fileName) {
         List<String> monthlyReports = ReadingFileTask6.ReadFile(fileName);
