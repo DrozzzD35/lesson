@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadingFileTask6 {
-    public static List<String> ReadFile() {
-        String path = "src/homeWork_03_02_2025/resources/y.2021.csv";
+    public static List<String> ReadFile(String fileName) {
+        String path = "src/homeWork_03_02_2025/resources/"+fileName;
         try {
             return new ArrayList<>(Files.readAllLines(Path.of(path)));
         } catch (IOException e) {

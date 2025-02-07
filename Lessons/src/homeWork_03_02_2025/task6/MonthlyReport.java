@@ -1,18 +1,17 @@
 package homeWork_03_02_2025.task6;
 
 
-import homeWork_03_02_2025.task3.ReadingFileTask3;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonthlyReport {
-    List<String> monthlyReportList;
-    List<MonthlyReportItem> monthlyReports = new ArrayList<>();
+    private int month;
+    private int year;
+    private List<MonthlyReportItem> items = new ArrayList<>();
 
-    public void MonthlyReportList() {
-        monthlyReportList = ReadingFileTask6.ReadFile();
-        for (String str : monthlyReportList) {
+    public void monthlyReportList(String fileName) {
+        List<String> monthlyReports = ReadingFileTask6.ReadFile(fileName);
+        for (String str : monthlyReports) {
             if (str.equals("item_name,is_expense,quantity,sum_of_one")) {
                 continue;
             }
@@ -24,14 +23,15 @@ public class MonthlyReport {
             double unitPrice = Double.parseDouble(strSplit[3]);
 
             MonthlyReportItem monthlyReportItem = new MonthlyReportItem(itemName, isExpense, quantity, unitPrice);
-            monthlyReports.add(monthlyReportItem);
+            items.add(monthlyReportItem);
         }
 
     }
 
 
+
     public void printReportList() {
-        for (MonthlyReportItem itemList : monthlyReports) {
+        for (MonthlyReportItem itemList : items) {
             System.out.print(itemList.getItemName());
             if (itemList.getExpense()) {
                 System.out.print(". Товар продан");
@@ -48,7 +48,7 @@ public class MonthlyReport {
 
     public double getTotalIncome() {
         double totalSum = 0;
-        for (MonthlyReportItem item : monthlyReports) {
+        for (MonthlyReportItem item : items) {
             if (!item.getExpense()) {
                 totalSum += item.getQuantity() * item.getUnitPrice();
             }
@@ -58,13 +58,20 @@ public class MonthlyReport {
 
     public double getTotalExpense() {
         double totalSum = 0;
-        for (MonthlyReportItem item : monthlyReports) {
+        for (MonthlyReportItem item : items) {
             if (item.getExpense()) {
                 totalSum += item.getQuantity() * item.getUnitPrice();
             }
         }
         return totalSum;
     }
+
+//    boolean verifyReports(YearlyReport yearlyReport, Map<Integer, MonthlyReport> monthlyReports) {
+//        for (YearlyReportItem items : yearlyReport.yearlyReportList) {
+//            if (items.getMonthNumber()==1){
+//                monthlyReports.put(items.getMonthNumber(),MonthlyReport )
+//            }
+//        }
 
 }
 

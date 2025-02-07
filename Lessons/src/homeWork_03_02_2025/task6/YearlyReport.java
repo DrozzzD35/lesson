@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 public class YearlyReport {
-    List<String> yearReport;
+    private int year;
     List<YearlyReportItem> yearlyReportList = new ArrayList<>();
 
     public void yearlyReportList() throws IOException {
-        yearReport = ReadingFileTask4.ReadFile();
+        List<String> yearReport = ReadingFileTask4.ReadFile();
         for (String str : yearReport) {
             if (str.equals("month,amount,is_expense")) {
                 continue;
@@ -63,7 +63,6 @@ public class YearlyReport {
         }
         return totalSum;
     }
-
 
 
 }
