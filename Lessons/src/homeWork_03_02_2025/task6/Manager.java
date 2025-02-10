@@ -1,19 +1,24 @@
 package homeWork_03_02_2025.task6;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.io.FileFilter;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.util.*;
 
 public class Manager {
+    private List<String> fileName;
     MonthlyReport monthlyReport = new MonthlyReport();
+    YearlyReport yearlyReport = new YearlyReport();
 
-    public void readReports() {
+    public void readResources() throws IOException {
         File folder = new File("src/homeWork_03_02_2025/resources");
-        File[] listFile = folder.listFiles();
-        for (File file : listFile) {
-            if (file.isFile()) {
-                monthlyReport.fileName.add(file.getName());
+        fileName = new ArrayList<>(Arrays.asList(Objects.requireNonNull(folder.list())));
+        for (String str:fileName){
+            if (str.startsWith("y")){
+                yearlyReport.yearlyReportList(str);
+            } else if (str.startsWith("m")){
+                monthlyReport.monthlyReportList(str);
             }
         }
     }

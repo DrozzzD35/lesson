@@ -11,23 +11,28 @@ import java.util.Map;
 
 public class YearlyReport {
     private int year;
-    List<YearlyReportItem> yearlyReportList = new ArrayList<>();
+    private List<YearlyReportItem> yearlyReportList = new ArrayList<>();
 
-    public void yearlyReportList() throws IOException {
-        List<String> yearReport = ReadingFileTask4.ReadFile();
+
+    public List<YearlyReportItem> getYearlyReportList() {
+        return yearlyReportList;
+    }
+
+    public void yearlyReportList(String fileName) throws IOException {
+        List<String> yearReport = ReadingFileTask6.ReadFileYear(fileName);
         for (String str : yearReport) {
             if (str.equals("month,amount,is_expense")) {
                 continue;
-            } else {
-                String[] strSplit = str.split(",");
-
-                int monthNumber = Integer.parseInt(strSplit[0]);
-                double amount = Double.parseDouble(strSplit[1]);
-                boolean isExpense = Boolean.parseBoolean(strSplit[2]);
-
-                YearlyReportItem yearlyReportItem = new YearlyReportItem(monthNumber, amount, isExpense);
-                yearlyReportList.add(yearlyReportItem);
             }
+            String[] strSplit = str.split(",");
+
+            int monthNumber = Integer.parseInt(strSplit[0]);
+            double amount = Double.parseDouble(strSplit[1]);
+            boolean isExpense = Boolean.parseBoolean(strSplit[2]);
+
+            YearlyReportItem yearlyReportItem = new YearlyReportItem(monthNumber, amount, isExpense);
+            yearlyReportList.add(yearlyReportItem);
+
         }
     }
 
