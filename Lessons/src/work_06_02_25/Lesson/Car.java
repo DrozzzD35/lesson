@@ -1,4 +1,4 @@
-package work_06_02_25;
+package work_06_02_25.Lesson;
 
 public abstract class Car {
 

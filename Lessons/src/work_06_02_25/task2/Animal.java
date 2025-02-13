@@ -1,4 +1,4 @@
-package work_06_02_25;
+package work_06_02_25.task2;
 
 public abstract class Animal {
 

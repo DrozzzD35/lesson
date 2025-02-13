@@ -1,8 +1,6 @@
 package homeWork_03_02_2025.task6;
 
 import java.io.File;
-import java.io.FileFilter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.*;
 

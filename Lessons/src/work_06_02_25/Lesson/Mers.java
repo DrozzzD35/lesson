@@ -1,4 +1,4 @@
-package work_06_02_25;
+package work_06_02_25.Lesson;
 
 public class Mers extends Car{
     public Mers(String color, String mark, int speed) {

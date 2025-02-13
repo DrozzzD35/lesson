@@ -14,6 +14,11 @@ public class YearlyReport {
     private List<YearlyReportItem> yearlyReportList = new ArrayList<>();
 
 
+    public int getYear() {
+        return year;
+    }
+
+
     public List<YearlyReportItem> getYearlyReportList() {
         return yearlyReportList;
     }
@@ -32,7 +37,6 @@ public class YearlyReport {
 
             YearlyReportItem yearlyReportItem = new YearlyReportItem(monthNumber, amount, isExpense);
             yearlyReportList.add(yearlyReportItem);
-
         }
     }
 

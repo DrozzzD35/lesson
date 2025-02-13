@@ -6,8 +6,15 @@ import java.util.List;
 
 public class MonthlyReport {
     private int month;
-    private int year;
     private List<MonthlyReportItem> items = new ArrayList<>();
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getMonth() {
+        return month;
+    }
 
 
     public void monthlyReportList(String fileName) {
