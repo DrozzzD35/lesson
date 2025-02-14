@@ -15,6 +15,7 @@ public class Order {
     }
 
     public void advancedAllStatus() {
+
     }
 
     public double getTotalPrice() {

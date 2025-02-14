@@ -1,30 +1,19 @@
 package homeWork_03_02_2025.task6;
 
 
-import homeWork_03_02_2025.task2.MonthlyReport;
-import homeWork_03_02_2025.task4.ReadingFileTask4;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class YearlyReport {
-    private int year;
     private List<YearlyReportItem> yearlyReportList = new ArrayList<>();
-
-
-    public int getYear() {
-        return year;
-    }
-
 
     public List<YearlyReportItem> getYearlyReportList() {
         return yearlyReportList;
     }
 
     public void yearlyReportList(String fileName) throws IOException {
-        List<String> yearReport = ReadingFileTask6.ReadFileYear(fileName);
+        List<String> yearReport = FileService.readFile(fileName);
         for (String str : yearReport) {
             if (str.equals("month,amount,is_expense")) {
                 continue;

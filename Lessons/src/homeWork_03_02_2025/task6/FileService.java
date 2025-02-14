@@ -6,9 +6,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadingFileTask6 {
+public class FileService {
 
-    public static List<String> ReadFileMonth(String fileName) {
+    public static List<String> readFile(String fileName) {
         String path = "src/homeWork_03_02_2025/resources/"+fileName;
         try {
             return new ArrayList<>(Files.readAllLines(Path.of(path)));
@@ -20,13 +20,4 @@ public class ReadingFileTask6 {
 
 
 
-    public static List<String> ReadFileYear(String fileName) {
-        String path = "src/homeWork_03_02_2025/resources/" + fileName;
-        try {
-            return new ArrayList<>(Files.readAllLines(Path.of(path)));
-        } catch (IOException e) {
-            System.out.println("Ошибка. Возможно не найден файл");
-            return new ArrayList<>();
-        }
-    }
 }

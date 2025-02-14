@@ -6,36 +6,13 @@ import java.util.List;
 
 public class MonthlyReport {
     private int month;
+    private int year;
     private List<MonthlyReportItem> items = new ArrayList<>();
 
-    public void setMonth(int month) {
+    public MonthlyReport(int month, int year) {
         this.month = month;
+        this.year = year;
     }
-
-    public int getMonth() {
-        return month;
-    }
-
-
-    public void monthlyReportList(String fileName) {
-        List<String> monthlyReports = ReadingFileTask6.ReadFileMonth(fileName);
-        for (String str : monthlyReports) {
-            if (str.equals("item_name,is_expense,quantity,sum_of_one")) {
-                continue;
-            }
-            String[] strSplit = str.split(",");
-
-            String itemName = strSplit[0];
-            boolean isExpense = Boolean.parseBoolean(strSplit[1]);
-            int quantity = Integer.parseInt(strSplit[2]);
-            double unitPrice = Double.parseDouble(strSplit[3]);
-
-            MonthlyReportItem monthlyReportItem = new MonthlyReportItem(itemName, isExpense, quantity, unitPrice);
-            items.add(monthlyReportItem);
-        }
-
-    }
-
 
 
     public void printReportList() {
@@ -74,13 +51,33 @@ public class MonthlyReport {
         return totalSum;
     }
 
-//    boolean verifyReports(YearlyReport yearlyReport, Map<Integer, MonthlyReport> monthlyReports) {
-//        for (YearlyReportItem items : yearlyReport.yearlyReportList) {
-//            if (items.getMonthNumber()==1){
-//                monthlyReports.put(items.getMonthNumber(),MonthlyReport )
-//            }
-//        }
+    public void add(MonthlyReportItem item) {
+        this.items.add(item);
+    }
 
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public List<MonthlyReportItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<MonthlyReportItem> items) {
+        this.items = items;
+    }
 }
 
 
