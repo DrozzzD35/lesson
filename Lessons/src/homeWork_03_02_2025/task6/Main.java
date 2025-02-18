@@ -1,18 +1,16 @@
 package homeWork_03_02_2025.task6;
 
-import homeWork_03_02_2025.task2.MonthlyReport;
-import homeWork_03_02_2025.task4.YearlyReport;
-
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
+        MonthlyReport monthlyReport = new MonthlyReport();
         Manager manager = new Manager();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            System.out.println();
             printMenu();
             System.out.println("Введите команду (1-6)");
             int command = scanner.nextInt();
@@ -20,16 +18,17 @@ public class Main {
                 manager.readAllMonthReports();
             }
             if (command == 2) {
-
+                manager.readAllYearReports();
             }
             if (command == 3) {
-                continue;
+                System.out.println("Введите год проверки");
+                manager.verifyReports(scanner.nextInt());
             }
             if (command == 4) {
-                continue;
+                manager.printMonthReport();
             }
             if (command == 5) {
-                continue;
+                manager.printYearReport();
             }
             if (command == 6) {
                 return;

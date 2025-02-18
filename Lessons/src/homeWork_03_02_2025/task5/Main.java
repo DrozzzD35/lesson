@@ -17,7 +17,7 @@ public class Main {
             System.out.println("Введите команду (1-6)");
             int command = scanner.nextInt();
             if (command == 1) {
-                monthlyReport.MonthlyReportList();
+                monthlyReport.monthlyReportList();
                 monthlyReport.printReportList();
             }
             if (command == 2) {

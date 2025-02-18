@@ -5,6 +5,7 @@ public class Lesson1 {
     // Точка входа в программу и она именно такая!
     public static void main(String [] args) {
         Cat barsik = new Cat();
+        String name = barsik.name;
         printHello();
         printGoodbye();
         printSum(1,5);

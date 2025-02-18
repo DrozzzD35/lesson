@@ -1,17 +1,14 @@
 package homeWork_03_02_2025.task2;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonthlyReport {
     List<String> monthlyReportList;
     List<MonthlyReportItem> monthlyReports = new ArrayList<>();
-    private double sumItem = 0;
-    private double sumExpense = 0;
 
-    public void MonthlyReportList(){
+    public void monthlyReportList(){
         monthlyReportList = ReadingFileTask2.ReadFile();
         for (String str : monthlyReportList) {
             if (str.equals("item_name,is_expense,quantity,sum_of_one")) {

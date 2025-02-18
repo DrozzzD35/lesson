@@ -7,41 +7,27 @@ import java.util.List;
 
 public class YearlyReport {
     private List<YearlyReportItem> yearlyReportList = new ArrayList<>();
+    private int year;
+
+    YearlyReport(){}
+
+    public YearlyReport(List<YearlyReportItem> yearlyReportList) {
+        this.yearlyReportList = yearlyReportList;
+    }
 
     public List<YearlyReportItem> getYearlyReportList() {
         return yearlyReportList;
     }
 
-    public void yearlyReportList(String fileName) throws IOException {
-        List<String> yearReport = FileService.readFile(fileName);
-        for (String str : yearReport) {
-            if (str.equals("month,amount,is_expense")) {
-                continue;
-            }
-            String[] strSplit = str.split(",");
-
-            int monthNumber = Integer.parseInt(strSplit[0]);
-            double amount = Double.parseDouble(strSplit[1]);
-            boolean isExpense = Boolean.parseBoolean(strSplit[2]);
-
-            YearlyReportItem yearlyReportItem = new YearlyReportItem(monthNumber, amount, isExpense);
-            yearlyReportList.add(yearlyReportItem);
-        }
+    public YearlyReport(int year) {
+        this.year = year;
     }
 
-    public void printYReportList() {
-        for (YearlyReportItem str : yearlyReportList) {
-            System.out.print("Месяц " + str.getMonthNumber());
-            System.out.print(". Сумма " + str.getAmount());
-            if (str.getIsExpense()) {
-                System.out.print(" Продано");
-                System.out.println();
-            } else {
-                System.out.println(" Заказано");
-                System.out.println();
-            }
-        }
+    public int getYear() {
+        return year;
     }
+
+
 
     public double getTotalIncome() {
         double totalSum = 0;
@@ -62,5 +48,7 @@ public class YearlyReport {
         return totalSum;
     }
 
-
+    public void addYearlyReports(YearlyReportItem yearlyReport) {
+        this.yearlyReportList.add(yearlyReport);
+    }
 }

@@ -20,12 +20,12 @@ public class YearlyStatistic {
         return monthlyReports;
     }
 
-    public void setMonthlyReports(List<MonthlyReport> monthlyReports) {
-        this.monthlyReports = monthlyReports;
-    }
+
     public void setMonthlyReport(MonthlyReport monthlyReport) {
-        if(!monthlyReports.contains(monthlyReport)){
+        if (!monthlyReports.contains(monthlyReport)) {
             this.monthlyReports.add(monthlyReport);
         }
     }
+
+
 }

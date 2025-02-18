@@ -14,22 +14,24 @@ public class MonthlyReport {
         this.year = year;
     }
 
+    public MonthlyReport(){}
 
-    public void printReportList() {
-        for (MonthlyReportItem itemList : items) {
-            System.out.print(itemList.getItemName());
-            if (itemList.getExpense()) {
-                System.out.print(". Товар продан");
-            } else {
-                System.out.print(". Товар заказан");
-            }
-            System.out.print(". Количество: " + itemList.getUnitPrice());
-            System.out.print(". Цена: " + itemList.getQuantity());
-            System.out.println();
-        }
-        System.out.println();
-
-    }
+//
+//    public void printReportList() {
+//        for (MonthlyReportItem itemList : items) {
+//            System.out.print(itemList.getItemName());
+//            if (itemList.getExpense()) {
+//                System.out.print(". Товар продан");
+//            } else {
+//                System.out.print(". Товар заказан");
+//            }
+//            System.out.print(". Количество: " + itemList.getUnitPrice());
+//            System.out.print(". Цена: " + itemList.getQuantity());
+//            System.out.println();
+//        }
+//        System.out.println();
+//
+//    }
 
     public double getTotalIncome() {
         double totalSum = 0;
@@ -51,7 +53,7 @@ public class MonthlyReport {
         return totalSum;
     }
 
-    public void add(MonthlyReportItem item) {
+    public void addItems(MonthlyReportItem item) {
         this.items.add(item);
     }
 
@@ -75,9 +77,6 @@ public class MonthlyReport {
         return items;
     }
 
-    public void setItems(List<MonthlyReportItem> items) {
-        this.items = items;
-    }
 }
 
 
