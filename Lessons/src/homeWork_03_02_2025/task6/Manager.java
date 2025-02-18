@@ -77,7 +77,6 @@ public class Manager {
         System.out.println("Закончили запись годовых отчетов");
     }
 
-
     public void readAllMonthReports() {
         List<String> monthFilesName = getFileNameSByType(ReportType.MONTHLY);
         System.out.println("Начали запись месячных отчетов");
@@ -118,63 +117,54 @@ public class Manager {
         System.out.println("Закончили запись месячных отчетов");
     }
 
-    public void printMonthReport (){
-        List<String> monthFilesName = getFileNameSByType(ReportType.MONTHLY);
+    public void printMonthReport(int year) {
+        if (!yearlyStatistics.containsKey(year)) {
+            System.out.println("Такого года не существует");
+            return;
+        }
+        YearlyStatistic yearlyStatistic = yearlyStatistics.get(year);
+        List<MonthlyReport> monthlyReports = yearlyStatistic.getMonthlyReports();
 
-        for (String fileName : monthFilesName) {
-            List<String> rows = FileService.readFile(fileName);
-
-            for (int i = 1; i < rows.size(); i++) {
-                String row = rows.get(i);
-
-                String[] strSplit = row.split(",");
-
-                String itemName = strSplit[0];
-                boolean isExpense = Boolean.parseBoolean(strSplit[1]);
-                int quantity = Integer.parseInt(strSplit[2]);
-                double unitPrice = Double.parseDouble(strSplit[3]);
-
-                System.out.print(itemName);
-                if (isExpense) {
-                    System.out.print(". Позиция продана");
-                } else {
-                    System.out.print(". Позиция заказана");
-                }
-                System.out.print(". Количество: " + quantity);
-                System.out.print(". Цена: " + unitPrice);
+        for (MonthlyReport report : monthlyReports) {
+            List<MonthlyReportItem> items = report.getItems();
+            for (MonthlyReportItem item : items) {
+                System.out.print("Позиция " + item.getItemName());
+                System.out.print(". Тип операции " + partsExpense(item.getExpense()));
+                System.out.print(". Количество " + item.getQuantity());
+                System.out.print(". Стоимость " + item.getUnitPrice());
                 System.out.println();
             }
         }
 
     }
 
-    public void printYearReport(){
-        List<String> yearFilesName = getFileNameSByType(ReportType.YEARLY);
-
-        for (String fileName : yearFilesName) {
-            List<String> rows = FileService.readFile(fileName);
-
-            for (int i = 1; i < rows.size(); i++) {
-                String row = rows.get(i);
-
-                String[] strSplit = row.split(",");
-
-                int monthNumber = Integer.parseInt(strSplit[0]);
-                double amount = Double.parseDouble(strSplit[1]);
-                boolean isExpense = Boolean.parseBoolean(strSplit[2]);
-
-                System.out.print("Месяц "+monthNumber);
-                System.out.print(". Сумма " +amount);
-                if (isExpense) {
-                    System.out.print(". Позиция продана");
-                } else {
-                    System.out.print(". Позиция заказана");
-                }
-                System.out.println();
-            }
+    public void printYearReport(int year) {
+        if (!yearlyStatistics.containsKey(year)) {
+            System.out.println("Год не найден");
+            return;
         }
+        YearlyStatistic yearlyStatistic = yearlyStatistics.get(year);
+        YearlyReport yearlyReport = yearlyStatistic.getYearlyReport();
+
+        List<YearlyReportItem> yearlyReports = yearlyReport.getYearlyReportList();
+
+        for (YearlyReportItem reportItem : yearlyReports) {
+            System.out.print("Месяц " + reportItem.getMonthNumber());
+            System.out.print(". Сумма " + reportItem.getAmount());
+            System.out.print(". Тип операции " + partsExpense(reportItem.getIsExpense()));
+            System.out.println();
+        }
+
     }
 
+    private String partsExpense(boolean isExpense) {
+//        if (isExpense) {
+//            return "расход";
+//        } else {
+//            return "доход";
+//        }
+        return isExpense ? "расход" : "доход";
+    }
 
     private int defineMonthByFileName(String fileName) {
         String[] parts = fileName.split("\\.");

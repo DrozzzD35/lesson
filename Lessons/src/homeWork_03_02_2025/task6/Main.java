@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        MonthlyReport monthlyReport = new MonthlyReport();
+
         Manager manager = new Manager();
         Scanner scanner = new Scanner(System.in);
 
@@ -13,25 +13,28 @@ public class Main {
             System.out.println();
             printMenu();
             System.out.println("Введите команду (1-6)");
-            int command = scanner.nextInt();
-            if (command == 1) {
-                manager.readAllMonthReports();
-            }
-            if (command == 2) {
-                manager.readAllYearReports();
-            }
-            if (command == 3) {
-                System.out.println("Введите год проверки");
-                manager.verifyReports(scanner.nextInt());
-            }
-            if (command == 4) {
-                manager.printMonthReport();
-            }
-            if (command == 5) {
-                manager.printYearReport();
-            }
-            if (command == 6) {
-                return;
+            int number = scanner.nextInt();
+            Command command = Command.getCommand(number);
+
+            switch (command) {
+                case READ_MONTH_REPORTS -> manager.readAllMonthReports();
+                case READ_YEAR_REPORTS -> manager.readAllYearReports();
+                case VERIFY_REPORTS -> {
+                    System.out.println("Введите год проверки");
+                    manager.verifyReports(scanner.nextInt());
+                }
+                case PRINT_MONTH_REPORTS -> {
+                    System.out.println("Введите год вывода");
+                    manager.printMonthReport(scanner.nextInt());
+                }
+                case PRINT_YEAR_REPORTS -> {
+                    System.out.println("Введите год вывода");
+                    manager.printYearReport(scanner.nextInt());
+                }
+                case EXIT -> {
+                    System.out.println("Завершение работы программы");
+                    return;
+                }
             }
         }
     }
