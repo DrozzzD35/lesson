@@ -158,11 +158,6 @@ public class Manager {
     }
 
     private String partsExpense(boolean isExpense) {
-//        if (isExpense) {
-//            return "расход";
-//        } else {
-//            return "доход";
-//        }
         return isExpense ? "расход" : "доход";
     }
 
