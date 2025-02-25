@@ -20,5 +20,7 @@ public class Truck extends Vehicle {
 
     @Override
     public void moveTo(String destination) {
+        setStatus(Status.ON_WAY);
+        System.out.println("Грузовик бренда " + getBrand() + " отправляется в " + destination + " со скоростью +" + getSpeed());
     }
 }

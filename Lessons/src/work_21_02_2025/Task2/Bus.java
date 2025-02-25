@@ -2,7 +2,7 @@ package work_21_02_2025.Task2;
 
 import java.util.List;
 
-public class Bus extends Vehicle{
+public class Bus extends Vehicle {
     private List<String> stop;
 
     public Bus(String brand, int speed, List<String> stop) {
@@ -15,7 +15,9 @@ public class Bus extends Vehicle{
     }
 
     @Override
-    public void moveTo(String destination){
+    public void moveTo(String destination) {
+        setStatus(Status.ON_WAY);
+        System.out.println("Автобус бренда " + getBrand() + " отправляется в " + destination + " со скоростью +" + getSpeed());
 
     }
 }

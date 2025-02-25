@@ -1,6 +1,6 @@
 package work_21_02_2025.Task2;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
     private int maxPassengers;
 
     public Car(String brand, int speed, int maxPassengers) {
@@ -14,6 +14,7 @@ public class Car extends Vehicle{
 
     @Override
     public void moveTo(String destination) {
-
+        setStatus(Status.ON_WAY);
+        System.out.println("Машина бренда " + getBrand() + " отправляется в " + destination + " со скоростью +" + getSpeed());
     }
 }

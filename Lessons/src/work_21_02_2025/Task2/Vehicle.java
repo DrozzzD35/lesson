@@ -4,11 +4,13 @@ public abstract class Vehicle {
     private String brand;
     private int speed;
     private Status status;
+    private boolean needRepair;
 
     public Vehicle(String brand, int speed) {
         this.brand = brand;
         this.speed = speed;
         this.status = Status.PARKING;
+        this.needRepair = false;
     }
 
     public void setStatus(Status status) {
@@ -28,4 +30,22 @@ public abstract class Vehicle {
     }
 
     public abstract void moveTo(String destination);
+
+    public void setNeedRepair(boolean needRepair) {
+        this.needRepair = needRepair;
+    }
+
+    public boolean isNeedRepair() {
+        return needRepair;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "brand='" + brand + '\'' +
+                ", speed=" + speed +
+                ", status=" + status +
+                ", needRepair=" + needRepair +
+                '}';
+    }
 }

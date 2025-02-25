@@ -9,6 +9,7 @@ public class Main {
         Animal bear = new Bear(50,Type.wild);
         rabbit.makeSound();
         bear.makeSound();
+        rabbit.eat();
 
         List<String> names = new ArrayList<>();
         List<Animal> animals = List.of(bear, rabbit);
