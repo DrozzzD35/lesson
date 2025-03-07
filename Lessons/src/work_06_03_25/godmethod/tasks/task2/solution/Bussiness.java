@@ -14,9 +14,11 @@ public class Bussiness {
     private double sum;
     private double average;
     private List<User> users = new ArrayList<>();
-    private String substringToFind;
+//    private String substringToFind;
     private List<User> foundUsers = new ArrayList<>();
     private List<Order> orders = new ArrayList<>();
+    private String filterStatus = "NEW";
+    private List<Order> filteredOrders = new ArrayList<>();
 
 
     public void fillNumbers() {
@@ -28,7 +30,9 @@ public class Bussiness {
     }
 
     public void findMinMaxAverage() {
-        min = numbers[0]; //Эта строка - личная доработка, иначе min = 0 (всегда)
+        max = numbers[0];
+        min = numbers[0];
+        sum = 0;
         for (int i = 0; i < size; i++) {
             if (numbers[i] > max) {
                 max = numbers[i];
@@ -50,13 +54,14 @@ public class Bussiness {
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
         System.out.println("Average: " + average);
+        System.out.println();
     }
 
     public void addUsers(User user) {
         users.add(user);
     }
 
-    public void removeObjectUsers(int idToRemove) {
+    public void removeUserFromList(int idToRemove) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId() == idToRemove) {
                 users.remove(i);
@@ -65,15 +70,15 @@ public class Bussiness {
         }
     }
 
-    public void addFoundUsers() {
+    public void addFoundUsers(String substringToFind) {
         for (User user : users) {
-            if (user.getName().contains(substringToFind)) {
+            if (user.getName().contains(substringToFind )) {
                 foundUsers.add(user);
             }
         }
     }
 
-    public void getNameObjectUsers(int idToUpdate, String newName) {
+    public void changeNameUsers(int idToUpdate, String newName) {
         for (User user : users) {
             if (user.getId() == idToUpdate) {
                 user.setName(newName);
@@ -87,21 +92,22 @@ public class Bussiness {
         for (User user : users) {
             System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
         }
+        System.out.println();
     }
 
-    public void printFoundUsers() {
+    public void printFoundUsers(String substringToFind) {
         System.out.println("Users found by substring '" + substringToFind + "':");
         for (User user : foundUsers) {
             System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
         }
+        System.out.println();
     }
 
     public void addOrders(Order order) {
         orders.add(order);
     }
 
-    public Order findObjectUsers(Order faindOrder) {
-        int orderIdToFind = 102;
+    public Order getOrderUsers(int orderIdToFind) {
         Order foundOrder = null;
         for (Order order : orders) {
             if (order.getOrderId() == orderIdToFind) {
@@ -111,15 +117,47 @@ public class Bussiness {
         return null;
     }
 
-    public void printFindObjectUsers(Order foundOrder) {
-        Order order = findObjectUsers(foundOrder);
-        if (foundOrder != null) {
-            System.out.println("Found order with ID " + foundOrder.getOrderId()
-                    + ", status = " + foundOrder.getStatus());
+
+    public void printFindOrderUsers(int orderIdToFind) {
+        Order order = getOrderUsers(orderIdToFind);
+        if (order != null) {
+            System.out.println("Found order with ID " + order.getOrderId() + ", status = " + order.getStatus());
+        }
+        System.out.println();
+    }
+
+    public void changeStatusOrders(int orderIdToUpdate, String newStatus) {
+        for (Order order : orders) {
+            if (order.getOrderId() == orderIdToUpdate) {
+                order.setStatus(newStatus);
+                break;
+            }
         }
     }
 
-    
 
+    public void fillFilteredOrders() {
+        for (Order order : orders) {
+            if (order.getStatus().equals(filterStatus)) {
+                filteredOrders.add(order);
+            }
+        }
+    }
+
+    public void printOrders() {
+        System.out.println("All orders:");
+        for (Order order : orders) {
+            System.out.println("Order " + order.getOrderId() + ", status = " + order.getStatus());
+        }
+        System.out.println();
+    }
+
+    public void printFilteredOrders() {
+        System.out.println("Filtered orders with status '" + filterStatus + "':");
+        for (Order order : filteredOrders) {
+            System.out.println("Order " + order.getOrderId() + ", status = " + order.getStatus());
+        }
+        System.out.println();
+    }
 
 }

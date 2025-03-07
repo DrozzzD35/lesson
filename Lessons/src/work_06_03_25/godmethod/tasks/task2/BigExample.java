@@ -124,7 +124,7 @@ public class BigExample {
                     + ", status = " + foundOrder.getStatus());
         }
 
-        //Поиск объекта по id из списка orders
+        //Изменение статуса объекта из списка orders
         int orderIdToUpdate = 101;
         String newStatus = "COMPLETED";
         for (Order order : orders) {
