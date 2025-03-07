@@ -13,9 +13,10 @@ public class Library {
         books.add(book);
     }
 
-    public Book findBook(Book bookToCheckout) {
+    public Book findBook(String name) {
+        Book bookToCheckout = null;
         for (Book b : books) {
-            if (b.getTitle().equals("Мастер и Маргарита")) {
+            if (b.getTitle().equals(name)) {
                 bookToCheckout = b;
                 return bookToCheckout;
             }
@@ -23,13 +24,14 @@ public class Library {
         return null;
     }
 
-    public void addOutBook(Book bookToCheckout) {
-        Book book = findBook(bookToCheckout);
+    public void addOutBook(String name) {
+        Book book = findBook(name);
         if (book != null) {
-            books.remove(bookToCheckout);
-            checkedOutBooks.add(bookToCheckout);
-            System.out.println("Книга «" + bookToCheckout.getTitle() + "» выдана.");
+            books.remove(book);
+            checkedOutBooks.add(book);
+            System.out.println("Книга «" + book.getTitle() + "» выдана.");
         }
+        System.out.println();
     }
 
     public void printBooksLibrary() {
@@ -37,11 +39,13 @@ public class Library {
         for (Book b : books) {
             System.out.println(b.getTitle() + " | Автор: " + b.getAuthor() + " | ISBN: " + b.getIsbn());
         }
+        System.out.println();
     }
 
-    public Book findOutBook(Book bookToReturn) {
+    public Book findOutBook(String name) {
+        Book bookToReturn;
         for (Book b : checkedOutBooks) {
-            if (b.getTitle().equals("Мастер и Маргарита")) {
+            if (b.getTitle().equals(name)) {
                 bookToReturn = b;
                 return bookToReturn;
             }
@@ -49,13 +53,14 @@ public class Library {
         return null;
     }
 
-    public void addBookList(Book bookToReturn){
-        Book book = findOutBook(bookToReturn);
+    public void addBookList(String name){
+        Book book = findOutBook(name);
         if (book != null) {
             checkedOutBooks.remove(book);
             books.add(book);
             System.out.println("Книга «" + book.getTitle() + "» возвращена в библиотеку.");
         }
+        System.out.println();
     }
 
     public void printAllBooks() {
@@ -65,6 +70,7 @@ public class Library {
         for (Book b : allBooks) {
             System.out.println(b.getTitle() + " (" + b.getAuthor() + ")");
         }
+        System.out.println();
     }
 
 
