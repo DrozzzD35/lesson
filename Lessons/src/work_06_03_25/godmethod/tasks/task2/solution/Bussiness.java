@@ -46,14 +46,9 @@ public class Bussiness {
     }
 
     public void printArray() {
-        System.out.print("Array: ");
         for (int i = 0; i < size; i++) {
             System.out.print(numbers[i] + " ");
         }
-        System.out.println();
-        System.out.println("Max: " + max);
-        System.out.println("Min: " + min);
-        System.out.println("Average: " + average);
         System.out.println();
     }
 

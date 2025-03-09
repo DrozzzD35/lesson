@@ -33,7 +33,7 @@ public class Calculator {
         }
         case "/" -> {
             if (b==0){
-                System.out.println("Ошибка. Деление на 0 невозможно");
+                System.out.println("Ошибка. Деление на 0 невозможно ");
                 return;
             }
             System.out.println("Результат: " + (a / b));
