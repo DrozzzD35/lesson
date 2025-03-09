@@ -43,4 +43,16 @@ public class Processor {
         return sum / numbers.length;
     }
 
+    public void printMaxMinAverageArray(){
+        System.out.print("Array: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+        System.out.println("Max: " + findMax());
+        System.out.println("Min: " + findMin());
+        System.out.println("Average: " + findAverage());
+        System.out.println();
+    }
+
 }

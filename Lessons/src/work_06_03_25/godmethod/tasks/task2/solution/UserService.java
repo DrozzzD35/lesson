@@ -11,11 +11,11 @@ public class UserService {
         users.add(user);
     }
 
-    public void removeUserById(int id){
-        users.removeIf(user -> user.getId()==id);
+    public void removeUserById(int id) {
+        users.removeIf(user -> user.getId() == id);
     }
 
-    public List<User> findUserByName(String substring){
+    public List<User> findUserByName(String substring) {
         List<User> foundUsers = new ArrayList<>();
         for (User user : users) {
             if (user.getName().contains(substring)) {
@@ -25,7 +25,16 @@ public class UserService {
         return foundUsers;
     }
 
-    public void updateUserName(int id, String newName){
+    public void printFoundUsers(String substring) {
+        List<User> foundUsers = findUserByName(substring);
+        System.out.println("Users found by substring '" + substring + "':");
+        for (User user : foundUsers) {
+            System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
+        }
+        System.out.println();
+    }
+
+    public void updateUserName(int id, String newName) {
         for (User user : users) {
             if (user.getId() == id) {
                 user.setName(newName);

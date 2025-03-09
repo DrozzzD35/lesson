@@ -74,7 +74,7 @@ public class BigExample {
             }
         }
 
-        //Именуем один из объектов списка users
+        //Обновляем имя из объектов списка users
         int idToUpdate = 3;
         String newName = "CharlieUpdated";
         for (User user : users) {

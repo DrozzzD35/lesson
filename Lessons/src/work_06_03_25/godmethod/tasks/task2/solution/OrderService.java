@@ -32,6 +32,7 @@ public class OrderService {
         for (Order order : orders) {
             System.out.println("Order " + order.getOrderId() + ", status = " + order.getStatus());
         }
+        System.out.println();
     }
 
 }
