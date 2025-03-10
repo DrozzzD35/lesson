@@ -2,7 +2,7 @@ package Projects.Project_12_01_25;
 
 import java.util.Scanner;
 
-public class javaSprint1Hw {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
