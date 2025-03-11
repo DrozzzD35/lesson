@@ -1,7 +1,6 @@
 package work_06_03_25.godmethod.tasks.task2.solution;
 
 
-
 import java.util.List;
 
 public class Main {
@@ -10,7 +9,7 @@ public class Main {
         UserService userService = new UserService();
         OrderService orderService = new OrderService();
 
-        processor.fillArray(15);
+        processor.fillArray(10);
         processor.printMaxMinAverageArray();
 
         userService.addUser(new User(1, "Alice"));
@@ -27,7 +26,7 @@ public class Main {
         orderService.addOrders(new Order(102, List.of("ItemC"), "IN_PROGRESS"));
 
         orderService.printAll();
-        orderService.updateOrderStatus(101,"COMPLETED");
+        orderService.updateOrderStatus(101, "COMPLETED");
         orderService.printAll();
 
     }
