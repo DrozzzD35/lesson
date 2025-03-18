@@ -34,7 +34,7 @@ public class Main {
         truck3.setNeedRepair(true);
         car3.setNeedRepair(true);
 
-        feetmanager.dispatchAll("Гора");
+        feetmanager.dispatchAll("Город");
 
     }
 }

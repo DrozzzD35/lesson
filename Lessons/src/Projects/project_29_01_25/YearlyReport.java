@@ -8,8 +8,6 @@ public class YearlyReport {
     private List<YearlyReportItem> yearlyReportList = new ArrayList<>();
     private int year;
 
-    YearlyReport(){}
-
     public YearlyReport(List<YearlyReportItem> yearlyReportList) {
         this.yearlyReportList = yearlyReportList;
     }
@@ -25,7 +23,6 @@ public class YearlyReport {
     public int getYear() {
         return year;
     }
-
 
 
     public double getTotalIncome() {

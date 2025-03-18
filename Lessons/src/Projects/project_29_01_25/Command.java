@@ -7,26 +7,26 @@ public enum Command {
     PRINT_MONTH_REPORTS,
     PRINT_YEAR_REPORTS,
     EXIT,
-    UNKNOWN ;
+    UNKNOWN;
 
-    public static Command getCommand(int number){
-        switch (number){
-            case 1-> {
+    public static Command getCommand(int number) {
+        switch (number) {
+            case 1 -> {
                 return READ_MONTH_REPORTS;
             }
-            case 2->{
+            case 2 -> {
                 return READ_YEAR_REPORTS;
             }
-            case 3->{
+            case 3 -> {
                 return VERIFY_REPORTS;
             }
-            case 4 ->{
+            case 4 -> {
                 return PRINT_MONTH_REPORTS;
             }
-            case  5->{
+            case 5 -> {
                 return PRINT_YEAR_REPORTS;
             }
-            case 6->{
+            case 6 -> {
                 return EXIT;
             }
             default -> {

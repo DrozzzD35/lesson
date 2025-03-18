@@ -46,17 +46,4 @@ public class MonthlyReportItem {
         this.unitPrice = unitPrice;
     }
 
-    public boolean checkMReport() {
-        if (itemName.isEmpty()) {
-            System.out.println("Имя не может быть пустым");
-            return false;
-        } else if (quantity <= 0) {
-            System.out.println("Количество не может иметь отрицательное или нулевое значение");
-            return false;
-        } else if (unitPrice <= 0) {
-            System.out.println("Сумма не может иметь отрицательное или нулевое значение");
-            return false;
-        }
-        return true;
-    }
 }

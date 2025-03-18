@@ -1,8 +1,7 @@
 package lesson2;
 
 public class Task1 {
-
-    public static void main() {
+    public static void main(String[] args) {
         int days = 10;
         int moneyPerDay = 200;
         int total = 0;

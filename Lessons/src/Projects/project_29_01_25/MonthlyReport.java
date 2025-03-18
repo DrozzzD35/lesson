@@ -14,24 +14,8 @@ public class MonthlyReport {
         this.year = year;
     }
 
-    public MonthlyReport(){}
-
-//
-//    public void printReportList() {
-//        for (MonthlyReportItem itemList : items) {
-//            System.out.print(itemList.getItemName());
-//            if (itemList.getExpense()) {
-//                System.out.print(". Товар продан");
-//            } else {
-//                System.out.print(". Товар заказан");
-//            }
-//            System.out.print(". Количество: " + itemList.getUnitPrice());
-//            System.out.print(". Цена: " + itemList.getQuantity());
-//            System.out.println();
-//        }
-//        System.out.println();
-//
-//    }
+    public MonthlyReport() {
+    }
 
     public double getTotalIncome() {
         double totalSum = 0;

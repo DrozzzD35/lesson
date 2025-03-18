@@ -22,7 +22,7 @@ public class FleetManager {
 
     public void removeVehicle(Vehicle vehicle) {
         vehicles.remove(vehicle);
-        System.out.println("Удалили транспортное средство " + vehicle);
+        System.out.println("Удалили транспортное средство " + vehicle.toString());
     }
 
 
