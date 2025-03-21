@@ -19,7 +19,7 @@ public class LessonList {
 //            System.out.println(numbers.get(i));
 //        }
 
-        for( Integer number : numbers ){
+        for (Integer number : numbers) {
             System.out.println(number);
         }
 

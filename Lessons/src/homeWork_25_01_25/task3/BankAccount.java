@@ -1,7 +1,6 @@
 package homeWork_25_01_25.task3;
 
 public class BankAccount {
-    // TODO переделать по ТЗ
     private int accountNumber;
     private String ownerName;
     private double balance;

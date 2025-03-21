@@ -1,14 +1,12 @@
 package lesson2;
 
 public class Lesson {
-    /* TODO
-     for(инициализация; условие; итерация) {
-        оператор;
-     }
-    * */
+    /*  for(инициализация; условие; итерация) {
+         оператор;
+      }
+     * */
     public static void main(String[] args) {
         runSpaceY();
-        // TODO  i = i + 1 тоже самое что i++
 
 //        printFloor();
 //        for (int i = 0; i < 10; i++) {
@@ -23,7 +21,6 @@ public class Lesson {
 //            System.out.println("Этаж: " + i);
 //        }
 
-        // TODO движение цикла в обратном направлении
         for (int i = 11; i >= -1; i--) {
             if (i == 0) {
                 continue;
@@ -63,7 +60,6 @@ public class Lesson {
 
     * */
     public static void runSpaceY() {
-        // TODO i = i - 7 тоже самое как i -= 7 (/=, +=, *=, %=, -=)
         int secondsBeforeStart = 70;
         for (int i = secondsBeforeStart; i >= 0; i = i - 7) {
             System.out.println("До старта SpaceY осталось: " + i);

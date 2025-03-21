@@ -11,7 +11,6 @@ public class IfElse {
     }
 
     public static void welcomeUserByName() {
-        // Todo использовать сканнер
         Scanner scanner = new Scanner(System.in);
         System.out.println("Здравствуйте, как вас зовут?");
         String name = scanner.nextLine();

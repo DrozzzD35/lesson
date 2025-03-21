@@ -13,16 +13,7 @@ import java.util.List;
 public class FileService {
 
     public static List<String> readFile(String fileName)  {
-        // todo посмотреть метод получение урла к ресурсам
-
-
-//        URL resource = FileService.class.getResource("/resources/");
-
-
-
         String path = "./resources/"+fileName;
-
-//        Path path= Paths.get("/fileName");
         try {
             return new ArrayList<>(Files.readAllLines(Path.of(path)));
         } catch (IOException e) {

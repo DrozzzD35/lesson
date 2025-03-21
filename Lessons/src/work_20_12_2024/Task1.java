@@ -29,9 +29,6 @@ public class Task1 {
 //            return a;
 //        }
 //        return b;
-
-
-        // TODO тернарный оператор: условие ? если выполнился : если не выполнился;
         return (a <= b) ? a : b;
     }
 

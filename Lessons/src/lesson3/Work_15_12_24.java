@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Work_15_12_24 {
 
     public static void main(String[] args) {
-        // TODO  индексация массива начинается с 0
         int[] numbers = new int[5]; // [0,0,0,0,0]
         numbers[0] = 10; // [10,0,0,0,0]
         numbers[1] = 20; // [10,20,0,0,0]
@@ -17,7 +16,7 @@ public class Work_15_12_24 {
         arrayAndFor();
     }
 
-    public static void console(){
+    public static void console() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сколько чисел вы хотите ввести?");
         int size = scanner.nextInt();
@@ -59,27 +58,26 @@ public class Work_15_12_24 {
             [5,4,3,2,1] -> выход из цикла
         *
         * */
-        for (int i = 0; i < size; i++){
-            System.out.println("Ввести число " + (i+1) + ": ");
+        for (int i = 0; i < size; i++) {
+            System.out.println("Ввести число " + (i + 1) + ": ");
             numbers[i] = scanner.nextInt();
         }
 
         System.out.println("Вы ввели: ");
-        for (int i = 0; i<size; i++){
+        for (int i = 0; i < size; i++) {
             System.out.println(numbers[i]);
         }
 
     }
 
-    public static void arrayAndFor(){
-        int[] array = {1,2,3,4,5}; // [1,2,3,4,5]
-        System.out.println("Длина массива: " + array.length); // todo
+    public static void arrayAndFor() {
+        int[] array = {1, 2, 3, 4, 5}; // [1,2,3,4,5]
+        System.out.println("Длина массива: " + array.length);
 
-        int[] scores = {10,20,30};
-        for (int i=0; i < scores.length; i++){
-            System.out.println("Элемент с индексом " + i +": " + scores[i]);
+        int[] scores = {10, 20, 30};
+        for (int i = 0; i < scores.length; i++) {
+            System.out.println("Элемент с индексом " + i + ": " + scores[i]);
         }
-        // todo выход за пределы границ массива
 
 
     }
