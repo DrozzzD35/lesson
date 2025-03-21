@@ -1,5 +1,7 @@
 package Projects.project_10_03_25.project.model;
 
+import Projects.project_10_03_25.project.utils.Identity;
+
 import java.util.UUID;
 
 public class Task {
@@ -8,6 +10,14 @@ public class Task {
     protected String description;
     protected Status status;
     protected Type type;
+
+    public Task(String name, String description) {
+        this.id = Identity.INSTANCE.generateId();
+        this.name = name;
+        this.description = description;
+        this.status = Status.NEW;
+        this.type = Type.TASK;
+    }
 
     public Integer getId() {
         return id;
