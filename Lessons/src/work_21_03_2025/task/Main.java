@@ -8,5 +8,7 @@ public class Main {
         Pair<Double, Float> pair1 = new Pair<>(12.12, 14.141565F);
         System.out.println(pair1);
 
+
+
     }
 }
