@@ -43,7 +43,7 @@ public class Lesson {
             System.out.println(entry.getKey() + " => " + entry.getValue());
         }
 
-        task();
+//        task();
         task2();
 
 

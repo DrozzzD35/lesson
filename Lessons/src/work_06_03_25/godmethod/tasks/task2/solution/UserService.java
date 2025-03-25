@@ -15,6 +15,7 @@ public class UserService {
         users.removeIf(user -> user.getId() == id);
     }
 
+
     public List<User> findUserByName(String substring) {
         List<User> foundUsers = new ArrayList<>();
         for (User user : users) {

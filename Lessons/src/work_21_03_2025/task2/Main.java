@@ -1,12 +1,14 @@
 package work_21_03_2025.task2;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Task task = new Task();
+        Task<Integer> task = new Task<>();
 
-        int[] arr = {1, 2, 3, 4, 5};
+        Integer[] arr = {1, 2, 3, 4, 5};
 
-//        task.countGreaterThan(arr, 156);
+        System.out.println(task.countGreaterThan(arr, 3));
 
     }
 }
