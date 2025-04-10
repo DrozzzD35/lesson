@@ -7,40 +7,64 @@ public class HomeWork {
     public static void main(String[] args) {
         Stack<Character> stack = new Stack<>();
 
-        stack.push('(');
-        stack.push(']');
-        stack.push(')');
-        stack.push('{');
-        stack.push('}');
+        String input = "(){}[]";
+
+        for (char symbol : input.toCharArray()) {
+
+            if (symbol == '(' || symbol == '[' || symbol == '{') {
+                stack.push(symbol);
+            } else if (symbol == ')' || symbol == ']' || symbol == '}') {
+
+                if (stack.isEmpty()) {
+                    System.out.println("Некорректный ввод");
+                    return;
+                }
+
+                char top = stack.pop();
+
+                if (!((top == '(' && symbol == ')') || (top == '[' && symbol == ']') || (top == '{' && symbol == '}'))) {
+                    System.out.println("Некорректный ввод");
+                    return;
+                }
+            }
+
+        }
+
+    }
 
 
-        if (stack.peek() == ')') {
-            stack.pop();
-            if (stack.peek() == '(') {
-                stack.pop();
-                System.out.println("Обнаружены скобки ()");
-            } else {
-                System.out.println("Ошибка.Не найдена пара скобки ()");
-            }
-        } else if (stack.peek() == ']') {
-            stack.pop();
-            if (stack.peek() == '[') {
-                stack.pop();
-                System.out.println("Обнаружены скобки []");
-            } else {
-                System.out.println("Ошибка.Не найдена пара скобки []");
-            }
-        } else if (stack.peek() == '}') {
-            stack.pop();
-            if (stack.peek() == '{') {
-                stack.pop();
-                System.out.println("Обнаружены скобки {}");
-            } else {
-                System.out.println("Ошибка.Не найдена пара скобки {}");
-            }
-        } 
+    private static void checkString() {
+        Stack<Character> stack = new Stack<>();
 
-        System.out.println("Стек: " + stack);
+        String input = "[)[{}]";
+
+        for (char symbol : input.toCharArray()) {
+
+            if (symbol == '(' || symbol == '{' || symbol == '[') {
+                stack.push(symbol);
+
+            } else if (symbol == ')' || symbol == ']' || symbol == '}') {
+
+                if (stack.isEmpty()) {
+                    System.out.println("Некорректное выражение");
+                    return;
+                }
+
+                char top = stack.pop();
+
+                if (!isMatching(top, symbol)) {
+                    System.out.println("Некорректное выражение");
+                    return;
+                }
+
+            }
+        }
+    }
+
+    private static boolean isMatching(char open, char close) {
+        return (open == '(' && close == ')')
+                || (open == '[' && close == ']')
+                || (open == '{' && close == '}');
     }
 
 }
