@@ -1,0 +1,14 @@
+Drone drone = new Drone("D8F9E0A1");
+
+drone.setColour(Drone.RED);
+
+
+public int addDrone(Drone d){
+    for (int i = 0; i = drones.length; i++){
+        if (drones[i]==null){
+            drones[i] = d;
+            return i;
+        }
+    }
+   return -1;
+}
