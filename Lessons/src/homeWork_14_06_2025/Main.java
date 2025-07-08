@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
         SummaryClass<Number> summaryInt = new SummaryClass<>();
-        summaryInt.printSum(1,34);
-        summaryInt.printSum(1.54,34.3);
+        summaryInt.printSum(1, 34);
+        summaryInt.printSum(1.54, 34.3);
 
 
 //        int a = 3;

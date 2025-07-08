@@ -2,7 +2,7 @@ package work_25_06_2025;
 
 public class Main {
     public static void main(String[] args) {
-        Temperature<Scale.CELSIUS> celsius = new Temperature<>(100, Scale.CELSIUS);
+        Temperature<Scale> celsius = new Temperature<>(100, Scale.CELSIUS);
         TemperatureConverter converter = new TemperatureConverter();
 
 // Конвертация в Фаренгейт

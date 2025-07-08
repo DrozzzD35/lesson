@@ -4,5 +4,4 @@ public enum Scale {
     CELSIUS,
     FAHRENHEIT,
     KELVIN;
-
 }
