@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Temperature<Scale.CELSIUS> celsius = new Temperature<>(100, Scale.CELSIUS);
+        Temperature<Scale> celsius = new Temperature<>(100, Scale.CELSIUS);
         TemperatureConverter converter = new TemperatureConverter();
 
         // Конвертация в Фаренгейт
-        Temperature<Scale.FAHRENHEIT> fahrenheit = converter.convert(celsius, Scale.FAHRENHEIT.class);
+        Temperature<Scale> fahrenheit = converter.convert(celsius, Scale.FAHRENHEIT);
 
         // Конвертация в Кельвин
-        Temperature<Scale.KELVIN> kelvin = converter.convert(celsius, Scale.KELVIN.class);
+        Temperature<Scale> kelvin = converter.convert(celsius, Scale.KELVIN);
 
         System.out.println("Исходная: " + celsius.getValue() + " C");
         System.out.println("Фаренгейт: " + fahrenheit.getValue() + " F");
