@@ -1,0 +1,13 @@
+Collection<E>
+├── List<E> (ordered, duplicates allowed)
+│   ├── ArrayList<E>        - resizable array, O(1) access
+│   ├── LinkedList<E>       - doubly-linked list, O(1) insert/delete
+│   └── Vector<E>           - legacy, synchronized
+├── Set<E> (no duplicates)
+│   ├── HashSet<E>          - hash table, O(1) operations
+│   ├── LinkedHashSet<E>    - hash table + linked list, insertion order
+│   └── TreeSet<E>          - red-black tree, sorted, O(log n) operations
+└── Queue<E> (FIFO processing)
+    ├── PriorityQueue<E>    - heap-based priority queue
+    └── Deque<E>
+        └── ArrayDeque<E>   - resizable array deque

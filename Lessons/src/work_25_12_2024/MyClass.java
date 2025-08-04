@@ -1,7 +1,7 @@
 package work_25_12_2024;
 
 public class MyClass {
-//    int nubmerDef = 20;
+//    int numberDef = 20;
 //    String strDef = "Вася";
 //    boolean blDef = true;
 
