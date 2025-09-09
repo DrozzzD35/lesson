@@ -18,8 +18,8 @@ public class SimpleHttpServer {
         server.start();
     }
 
-    static  class HelloServer implements HttpHandler{
-        public void handle (HttpExchange exchange) throws IOException{
+    static class HelloServer implements HttpHandler {
+        public void handle(HttpExchange exchange) throws IOException {
             String responce = "Привет, ты сюда попал";
             exchange.sendResponseHeaders(200, responce.length());
 

@@ -17,16 +17,16 @@ public class MyHttp {
         URI youtubeUrl = URI.create("https://www.youtube.com/watch?v=luN-tRLZC24");
 
 
-        // GET  /users
-        // put  /users   (тело запроса)
-        // Post  /users   (тело запроса)
-        // patch  /users   (тело запроса)
-        // delete  /users
+        // GET /users - получить данные
+        // put /users (тело запроса) - изменить данные
+        // Post /users (тело запроса) - создать данные
+        // patch /users (тело запроса) - частично изменить данные
+        // delete /users - удалить данные
 
 
-        // 200-299  Отлично
-        // 400-499  - Ты сделал что-то не так
-        // 500-599  - проблемы на сервера
+        // 200-299 - Отлично
+        // 400-499 - Ты сделал что-то не так
+        // 500-599 - проблемы на сервера
 
         // Content-type: application/json
         // Accept
@@ -34,8 +34,8 @@ public class MyHttp {
 
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(youtubeUrl)
-                .header("Accept","application/json")
-                .header("User-Agent","my phone")
+                .header("Accept", "application/json")
+                .header("User-Agent", "my phone")
                 .GET()
                 .build();
 
