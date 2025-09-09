@@ -1,4 +1,4 @@
-package work_08_09_2025;
+package work_by_HTTP;
 
 import java.net.URI;
 import java.net.http.HttpRequest;
