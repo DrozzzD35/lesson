@@ -61,6 +61,15 @@ public class Library {
     }
 
 
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "items=" + items +
+                ", readers=" + readers +
+                '}';
+    }
+
     // Вспомогательные
 
     private LibraryItem findItemById(String id) {
@@ -69,5 +78,4 @@ public class Library {
         }
         throw new ItemNotFoundException("Предмет с таким идентификатором не найден " + id);
     }
-
 }
