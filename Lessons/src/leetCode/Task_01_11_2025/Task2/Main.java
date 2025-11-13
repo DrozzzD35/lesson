@@ -4,8 +4,6 @@ package leetCode.Task_01_11_2025.Task2;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String s = "abc";
-        int a = s.length();
 
         System.out.println(solution.lengthOfLastWord("Hello World"));
         System.out.println(solution.lengthOfLastWord("   fly me   to   the moon  "));
