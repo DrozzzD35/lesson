@@ -12,9 +12,9 @@ public class Solution {
 
         while (current.next != null) {
 
-            if (current.val == current.next.val){
+            if (current.val == current.next.val) {
                 current.next = current.next.next;
-            }else {
+            } else {
                 current = current.next;
             }
 
@@ -23,6 +23,15 @@ public class Solution {
 
         return head;
 
+
+    }
+
+    public void printListNode(ListNode list) {
+        while (list != null) {
+            System.out.print(list.val + " ");
+            list = list.next;
+        }
+        System.out.println();
 
     }
 
