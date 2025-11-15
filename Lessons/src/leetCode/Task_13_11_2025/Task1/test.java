@@ -6,17 +6,20 @@ public class test {
         int[] nums1 = {1, 2, 3, 0, 0, 0};
         int[] nums2 = {2, 5, 6};
 
+        int[] nums3 = {1};
+        int[] nums4 = {};
+
+        int[] nums5 = {0};
+        int[] nums6 = {1};
 
         printArr(nums1);
-        printArr(nums2);
-
         solution.merge(nums1, 3, nums2, 3);
-
-
         printArr(nums1);
-        printArr(nums2);
+        solution.merge(nums3, 1, nums4, 0);
+        solution.merge(nums5, 0, nums6, 1);
 
-        printArr(solution.getArr());
+        printArr(nums3);
+        printArr(nums5);
 
 
     }
