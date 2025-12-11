@@ -7,7 +7,7 @@ public class Task1 {
     public static void main(String[] args) {
         //Задача: Найти максимальную сумму подмассива длины k.
 
-        int[] arr = {-1, -2, -3, -4};
+        int[] arr = {5, 8, 4, 3};
         int k = 2;
         int sum = 0;
 
