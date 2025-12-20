@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class Task6 {
     public static void main(String[] args) {
-        int[] nums = {2, 0, 2, 1, 1, 0};
+        int[] nums = {};
 
-        sortColors2(nums);
+        sortColors(nums);
         System.out.println(Arrays.toString(nums));
 
     }
@@ -42,6 +42,8 @@ public class Task6 {
 
     public static void sortColors(int[] nums) {
         int[] counts = new int[3];
+        int index = 0;
+        int value;
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) {
@@ -52,6 +54,17 @@ public class Task6 {
                 counts[2] += 1;
             }
         }
+
+        for (int i = 0; i < counts.length; i++) {
+            value = counts[i];
+
+            while (value > 0) {
+                nums[index] = i;
+                value--;
+                index++;
+            }
+        }
+
 
     }
 
