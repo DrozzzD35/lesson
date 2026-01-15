@@ -1,4 +1,4 @@
-package algo.arrays.work_10_12_2025;
+package algo.work_10_12_2025;
 
 import java.util.HashMap;
 import java.util.Map;
