@@ -1,4 +1,4 @@
-package homeWork_20_01_25;
+package algo.arrays.homeWork_20_01_25;
 
 public class Task1 {
     public static void main(String[] args) {

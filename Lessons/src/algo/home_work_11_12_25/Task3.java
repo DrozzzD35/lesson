@@ -1,8 +1,4 @@
-package home_work_11_12_25;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+package algo.arrays.home_work_11_12_25;
 
 public class Task3 {
 
